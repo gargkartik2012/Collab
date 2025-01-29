@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Artists List</h2>
+    <!-- Show message if no artists are found -->
+    <div class="no-data" *ngIf="artist_list.length === 0">
+        No artists found
+    </div>
+
+    <div class="artists-grid">
+        <div class="artist-card" *ngFor="let artist of artist_list; let i = index">
+            <h3>{{ artist.name }}</h3>
+            <p><strong>ID:</strong> {{ artist.id }}</p>
+            <p><strong>Name:</strong> {{ artist.name }}</p>
+            <p><strong>Image:</strong> <img [src]="artist.image" alt="{{ artist.name }}"></p>
+            <p><strong>Share URL:</strong> <a [href]="artist.shareurl" target="_blank">{{ artist.shareurl }}</a></p>
+        </div>
+    </div>
+</div>
